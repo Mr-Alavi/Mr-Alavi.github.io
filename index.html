@@ -2,22 +2,30 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <!-- جلوگیری از ترجمه خودکار توسط مرورگر -->
+    <meta name="google" content="notranslate">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome | T . R . O . R</title>
     <style>
-        body { background: #000; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; transition: opacity 1.5s ease; }
-        .container { border: 2px solid #8a2be2; padding: 40px; border-radius: 20px; text-align: center; }
-        #text-1, #text-2 { color: #40a9ff; font-family: sans-serif; font-size: 1.5rem; display: block; }
+        body { background: #000; display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100vh; margin: 0; transition: opacity 1.5s ease; color: #fff; font-family: sans-serif; }
+        .container { border: 2px solid #8a2be2; padding: 40px; border-radius: 20px; text-align: center; width: 80%; }
+        #text-1 { color: #40a9ff; font-size: 1.5rem; display: block; margin-bottom: 10px; }
+        #text-2 { color: #ffffff; font-size: 1.5rem; display: block; }
+        .footer { position: absolute; bottom: 20px; font-size: 0.8rem; color: #555; }
     </style>
 </head>
-<body>
+<body class="notranslate">
     <div class="container">
         <span id="text-1"></span>
         <span id="text-2"></span>
     </div>
+    <div class="footer">© 2026 T.R.O.R, Inc.</div>
+
     <script>
+        // سرعت تایپ کمتر شد (اعداد بزرگتر یعنی سرعت کمتر)
         const t1 = "You Are Here.";
         const t2 = "The Official Website of Hossein Alavi.";
+        
         function type(id, text, speed, cb) {
             let i = 0;
             const el = document.getElementById(id);
@@ -28,8 +36,8 @@
             run();
         }
         window.onload = () => {
-            type("text-1", t1, 100, () => type("text-2", t2, 50, () => {
-                setTimeout(() => { document.body.style.opacity = "0"; setTimeout(() => window.location.href = "home.html", 1500); }, 2000);
+            type("text-1", t1, 150, () => type("text-2", t2, 100, () => {
+                setTimeout(() => { document.body.style.opacity = "0"; setTimeout(() => window.location.href = "home.html", 2000); }, 3000);
             }));
         };
     </script>
