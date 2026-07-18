@@ -122,17 +122,12 @@
         <p id="textTyping"></p>
         
         <div class="btn-group">
-            <!-- ردیف اول -->
             <a href="Projects.html" class="btn-unified">پروژه‌های من</a>
             <div class="talk-button-wrapper">
                 <a href="Mr-Alavi-Chat.html" class="btn-unified">با من صحبت کنید</a>
                 <span class="animated-arrow">⬅</span>
             </div>
-            
-            <!-- عنصر اجبار به خط بعدی -->
             <div style="flex-basis: 100%; height: 0;"></div>
-            
-            <!-- ردیف دوم -->
             <a href="About.html" class="btn-unified">درباره من ...!</a>
         </div>
     </div>
@@ -151,6 +146,7 @@ const paragraph = "به وب‌سایت رسمی من خوش آمدید.\nاین
 
 function typeText(element, text, speed, callback) {
     let i = 0;
+    element.innerHTML = ""; 
     function run() {
         if (i < text.length) {
             element.innerHTML += text[i] === "\n" ? "<br>" : text[i];
@@ -163,7 +159,7 @@ function typeText(element, text, speed, callback) {
     run();
 }
 
-window.addEventListener("load", function () {
+document.addEventListener("DOMContentLoaded", function () {
     const titleEl = document.getElementById("titleTyping");
     const subEl = document.getElementById("subTyping");
     const textEl = document.getElementById("textTyping");
@@ -183,4 +179,4 @@ window.addEventListener("load", function () {
 });
 </script>
 </body>  
-    </html>
+</html>
