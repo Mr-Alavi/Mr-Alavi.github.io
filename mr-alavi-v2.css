@@ -1,58 +1,19 @@
-/* MR ALAVI V2 - Premium Futuristic Upgrade */
+/* MR ALAVI V2 - FULL SUITE */
 
-/* 1. Cinematic Loading Screen */
-.mralavi-v2-loader {
-    position: fixed;
-    inset: 0;
-    background: #000;
-    z-index: 9999;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: opacity 1.2s ease-in-out;
-    pointer-events: none;
-}
-.mralavi-v2-loader-text {
-    color: #40a9ff;
-    font-size: 1.8rem;
-    text-align: center;
-    text-shadow: 0 0 15px #40a9ff;
-    animation: mralavi-v2-pulse 2s infinite;
-}
+/* پایه و اتمسفر */
+body { margin: 0; background: #000; color: #fff; font-family: 'Segoe UI', sans-serif; }
+body::before { content: ""; position: fixed; inset: 0; background: radial-gradient(circle at 50% 50%, #0a192f 0%, #000 100%); z-index: -1; }
 
-/* 2. Futuristic Background Atmosphere */
-body::before {
-    content: "";
-    position: fixed;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background: radial-gradient(circle at 50% 50%, #0a192f 0%, #000 100%);
-    z-index: -1;
-}
+/* افکت‌های پایه */
+.mralavi-v2-glass { background: rgba(255, 255, 255, 0.03) !important; backdrop-filter: blur(15px); border: 1px solid rgba(255, 255, 255, 0.1) !important; border-radius: 15px; }
 
-/* 3. Glassmorphism Design Enhancement */
-.mralavi-v2-glass {
-    background: rgba(255, 255, 255, 0.03) !important;
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
-    border: 1px solid rgba(255, 255, 255, 0.1) !important;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5) !important;
-}
+/* 1. ترمینال تعاملی */
+.mralavi-v2-terminal { background: #000; color: #0f0; padding: 20px; font-family: 'Courier New', monospace; border: 1px solid #333; border-radius: 8px; margin: 20px 0; }
+.mralavi-v2-terminal-input { color: #0f0; background: transparent; border: none; outline: none; width: 100%; }
 
-/* 4. Cursor Light Effect */
-.mralavi-v2-cursor-glow {
-    position: fixed;
-    width: 400px;
-    height: 400px;
-    background: radial-gradient(circle, rgba(64, 169, 255, 0.08) 0%, transparent 70%);
-    pointer-events: none;
-    z-index: 0;
-    border-radius: 50%;
-    transform: translate(-50%, -50%);
-    transition: opacity 0.3s;
-}
+/* 2. کارت‌های پروژه (نمایشگر) */
+.mralavi-v2-card { transition: transform 0.3s ease; }
+.mralavi-v2-card:hover { transform: scale(1.02); border-color: #40a9ff !important; }
 
-/* Keyframes */
-@keyframes mralavi-v2-pulse {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.5; }
-}
+/* 3. نور موس */
+.mralavi-v2-cursor-glow { position: fixed; width: 300px; height: 300px; background: radial-gradient(circle, rgba(64, 169, 255, 0.05) 0%, transparent 70%); pointer-events: none; z-index: 0; transform: translate(-50%, -50%); }
