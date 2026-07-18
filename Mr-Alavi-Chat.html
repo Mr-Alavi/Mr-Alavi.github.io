@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Chat with Mr Alavi</title>
+    <link rel="stylesheet" href="Mr-Alavi-Chat.css">
+</head>
+<body>
+    <div class="chat-container">
+        <header class="chat-header">
+            <div class="profile-info">
+                <img src="profile.jpg" alt="Mr Alavi" class="profile-pic" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZD0iTTEyIDJDMi43NiAyIDEgMy43NiAxIDEycDguMjQgMTAgMTAgMTAgMTAgMTAgMTAgMTAgMTAgMTBTMjEuMjQgMiAxMiAyem0wIDE4YzQuNDEgMCA4LTMuNTkgOC04cy0zLjU5LTgtOC04LTgtMy41OS04IDggMy41OSA4IDggOHptMC0xNGMyLjIxIDAgNCAxLjc5IDQgNHMtMS43OSA0LTQgNC00LTEuNzktNC00IDEuNzktNCA0LTR6IiBmaWxsPSIjMDBmM2ZmIi8+PC9zdmc+'">
+                <div class="status-box">
+                    <h2>Mr Alavi</h2>
+                    <span class="online-status">Online ●</span>
+                </div>
+            </div>
+            <a href="index.html" class="back-home">Back</a>
+        </header>
+        <div class="chat-box" id="chat-box"></div>
+        <div class="quick-replies">
+            <button onclick="sendQuickReply('معرفی Mr Alavi')">معرفی Mr Alavi</button>
+            <button onclick="sendQuickReply('پروژه‌های من')">پروژه‌های من</button>
+            <button onclick="sendQuickReply('خدمات')">خدمات</button>
+            <button onclick="sendQuickReply('ارتباط با من')">ارتباط با من</button>
+        </div>
+        <div class="input-area">
+            <button id="voice-btn" class="icon-btn">🎤</button>
+            <input type="text" id="user-input" placeholder="Type a message...">
+            <button id="send-btn" class="icon-btn">➤</button>
+        </div>
+    </div>
+    <script src="Mr-Alavi-Chat.js"></script>
+</body>
+</html>
