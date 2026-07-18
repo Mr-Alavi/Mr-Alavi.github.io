@@ -179,32 +179,22 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 </script>
 <script>
-    // این کد فقط در همین صفحه اجرا می‌شود
-    
-    // ۱. تشخیص کشیدن صفحه به پایین (Pull-to-Refresh)
+    // فقط برای کشیدن صفحه به پایین (Pull-to-Refresh)
     let touchStartY = 0;
+    
     window.addEventListener('touchstart', e => {
-        touchStartY = e.changedTouches[0].screenY;
+        touchStartY = e.touches[0].pageY;
     }, {passive: true});
 
     window.addEventListener('touchend', e => {
-        let touchEndY = e.changedTouches[0].screenY;
-        // اگر کاربر صفحه را به پایین کشید و در ابتدای صفحه بود
-        if (touchEndY - touchStartY > 100 && window.scrollY === 0) {
+        let touchEndY = e.changedTouches[0].pageY;
+        let diff = touchEndY - touchStartY;
+        
+        // اگر کاربر در بالای صفحه است و صفحه را به پایین کشید
+        if (window.scrollY === 0 && diff > 150) {
             window.location.href = "index.html";
         }
     }, {passive: true});
-
-    // ۲. اگر کاربر صفحه را رفرش کرد، هدایت شود به خوش‌آمدگویی
-    // این کار را با استفاده از SessionStorage مدیریت می‌کنیم
-    if (sessionStorage.getItem('visited') === 'true') {
-        // اگر قبلاً وارد شده، رفرش ساده باعث بازگشت به خوش‌آمدگویی می‌شود
-        window.addEventListener('beforeunload', () => {
-            sessionStorage.removeItem('visited');
-        });
-    } else {
-        sessionStorage.setItem('visited', 'true');
-    }
 </script>
 </body>  
 </html>
