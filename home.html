@@ -178,5 +178,27 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 });
 </script>
+    <script>
+    // جلوگیری از کش شدن صفحه اصلی توسط مرورگر
+    window.addEventListener('pageshow', function(event) {
+        if (event.persisted) {
+            window.location.reload();
+        }
+    });
+
+    // تشخیص کشیدن صفحه به پایین (Pull-to-Refresh)
+    let touchStartY = 0;
+    window.addEventListener('touchstart', e => {
+        touchStartY = e.changedTouches[0].screenY;
+    }, {passive: true});
+
+    window.addEventListener('touchend', e => {
+        let touchEndY = e.changedTouches[0].screenY;
+        // اگر کاربر صفحه را به پایین کشید (بیش از ۱۰۰ پیکسل)
+        if (touchEndY - touchStartY > 100 && window.scrollY === 0) {
+            window.location.href = "index.html";
+        }
+    }, {passive: true});
+</script>
 </body>  
 </html>
